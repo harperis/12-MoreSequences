@@ -22,8 +22,8 @@ def main():
     #   They launch annoying rg.RoseWindows on each run that you don't want
     #   until you get to TO DO 9 and 10.
     # ------------------------------------------------------------------
-    # run_test_draw_shapes()
-    # run_test_rectangles_from_circles()
+    run_test_draw_shapes()
+    run_test_rectangles_from_circles()
 
 
 def run_test_make_simple_list():
@@ -162,12 +162,17 @@ def run_test_make_less_simple_string():
     actual = make_less_simple_string(3, 6)
     print('Expected:', expected)
     print('Actual:  ', actual)
+    # Test 2
+    expected = '7-8-9'
+    actual = make_less_simple_string(7, 9)
+    print('Expected:', expected)
+    print('Actual:  ', actual)
 
 
 def make_less_simple_string(m, n):
     sequence = ''
-    for k in range(m, n):
-            sequence = sequence + str(m) + '-' + str(k + 1)
+    for k in range(m, n + 1):
+        sequence = sequence + str(k) + '-'
     return sequence
     """
     What comes in:
@@ -251,6 +256,12 @@ def run_test_draw_shapes():
 
 
 def draw_shapes(shapes, window):
+    for k in range(len(shapes)):
+        shape = shapes[k]
+        shape.attach_to(window)
+        window.render()
+        window.continue_on_mouse_click()
+
     """
     What comes in:
       -- a sequence of rg.Shape objects
@@ -369,6 +380,8 @@ def run_test_rectangles_from_circles():
 
 
 def rectangles_from_circles(circles):
+    for k in range(len(circles)):
+    return
     """
     See   rectangles_from_circles.pdf   in this project for pictures
     that may help you better understand the following specification:

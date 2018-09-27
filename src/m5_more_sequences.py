@@ -7,8 +7,8 @@ for ITERATING through SEQUENCES, including:
   -- The FIND pattern (via LINEAR SEARCH)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Isaac Harper.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -17,8 +17,8 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_radii()
     run_test_count_last_n_odds()
-    run_test_index_of_first_negative()
-    run_test_contains_an_a()
+ #   run_test_index_of_first_negative()
+#    run_test_contains_an_a()
 
 
 # ----------------------------------------------------------------------
@@ -59,6 +59,12 @@ def run_test_sum_radii():
 
 
 def sum_radii(circles):
+    total = 0
+    for k in range(len(circles)):
+        circle = circles[k]
+        radius = circle.radius
+        total = total + radius
+    return total
     """
     What comes in:
       -- a sequence of rg.Circle objects
@@ -76,7 +82,7 @@ def sum_radii(circles):
       :rtype: int | float
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     # Note: No fair using "slices" on ANY of these problems,
@@ -130,6 +136,9 @@ def run_test_count_last_n_odds():
 
 
 def count_last_n_odds(integers, n):
+    for k in range(integers):
+        if n <= len(integers):
+            
     """
     What comes in:
       -- a sequence of integers
@@ -267,6 +276,12 @@ def run_test_contains_an_a():
 
 
 def contains_an_a(s):
+    for k in range(s):
+        if s[k] == 'a':
+            return 'True'
+        else:
+            return 'False'
+
     """
     What comes in:
       -- a string
